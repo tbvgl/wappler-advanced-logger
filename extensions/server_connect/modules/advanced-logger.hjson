@@ -1,0 +1,86 @@
+[
+  {
+    "type": "advanced_logger",
+    "module": "advanced-logger",
+    "action": "logMessage",
+    "groupTitle": "Logging",
+    "groupIcon": "fas fa-lg fa-file-alt comp-exec",
+    "title": "Advanced Log",
+    "icon": "fas fa-lg fa-terminal comp-exec",
+    "usedModules": {
+      "node": {
+        "pino": "^7.5.1"
+      }
+    },
+    "properties": [
+      {
+        "group": "Log",
+        "variables": [
+          {
+            "name": "actionName",
+            "optionName": "name",
+            "title": "Name",
+            "type": "text",
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "message",
+            "optionName": "message",
+            "title": "Message",
+            "type": "text",
+            "required": true,
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "help": "The log message"
+          },
+          {
+            "name": "details",
+            "optionName": "details",
+            "title": "Message Details",
+            "type": "text",
+            "required": false,
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "help": "Additional details as a JSON object"
+          },
+          {
+            "name": "log_level",
+            "optionName": "log_level",
+            "title": "Log Level",
+            "type": "text",
+            "required": true,
+            "serverDataBindings": true,
+            "help": "The log level"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "clean_old_logs",
+    "module": "advanced-logger",
+    "action": "cleanOldLogs",
+    "groupTitle": "Logging",
+    "groupIcon": "fas fa-lg fa-file-alt comp-exec",
+    "title": "Clean Old Logs",
+    "icon": "fas fa-lg fa-broom comp-exec",
+     "properties": [
+      {
+        "group": "Log",
+        "variables": [
+          {
+            "name": "retainDays",
+            "optionName": "retainDays",
+            "title": "Retain Days",
+            "type": "numberorstring",
+            "required": false,
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "help": "Days to retain the log files"
+          }
+        ]
+      }
+    ]
+  }
+]
