@@ -65,7 +65,7 @@ const logger = pino({
 function getCurrentDate() {
     const now = new Date();
     const date = now.getDate();
-    const month = now.getMonth() + 1; // Months are zero-based
+    const month = now.getMonth() + 1;
     const year = now.getFullYear();
 
     return `${year}.${month.toString().padStart(2, "0")}.${date
@@ -99,7 +99,7 @@ function parse(options) {
 }
 async function cleanOldLogs(options) {
     options = this.parse(options);
-    const logRetainDays = options.retainDays; // || 7;
+    const logRetainDays = options.retainDays || 7;
     if (!logDirectoryPath || isNaN(logRetainDays)) {
         console.log("logDirectoryPath:", logDirectoryPath);
         console.log("logRetainDays:", logRetainDays);
@@ -110,15 +110,13 @@ async function cleanOldLogs(options) {
     const logDirectory = logDirectoryPath;
     const currentDate = new Date();
     currentDate.setDate(currentDate.getDate() - logRetainDays);
-    currentDate.setHours(0, 0, 0, 0); // Set the time to the start of the day
+    currentDate.setHours(0, 0, 0, 0);
     console.log("Checking logs older than:", currentDate);
     const files = await fs.promises.readdir(logDirectory);
 
     for (const file of files) {
         const filePath = path.join(logDirectory, file);
         const fileStat = await fs.promises.stat(filePath);
-
-        // Extract the date from the log file name
         const logDateMatches = file.match(/(\d{4})\.(\d{2})\.(\d{2})\.log$/);
         if (!logDateMatches) {
             console.log("Skipping non-log file:", filePath);
@@ -130,7 +128,7 @@ async function cleanOldLogs(options) {
             logDateMatches[2] - 1,
             logDateMatches[3]
         );
-        logDate.setHours(0, 0, 0, 0); // Set the time to the start of the day
+        logDate.setHours(0, 0, 0, 0);
         console.log("Checking file:", filePath, "Log Date:", logDate);
 
         if (currentDate > logDate) {
@@ -167,7 +165,6 @@ async function logMessage(options) {
         Sentry.captureMessage(message, {
             level: log_level,
             extra: logObject,
-            // Add the following line to send options.details
             tags: { details: JSON.stringify(details) },
         });
     } else {
