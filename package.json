@@ -1,0 +1,29 @@
+{
+    "name": "wappler-advanced-logger",
+    "version": "0.0.0-semantic-release",
+    "description": "This extension for Wappler provides advanced logging functionality using the [Pino](https://github.com/pinojs/pino) library, [Logtail](https://logtail.com) for log aggregation, and [Sentry](https://sentry.io) for error tracking. It allows you to log messages with various log levels, supports multiple transport options such as console, file, and Logtail, and provides log redaction capabilities.",
+    "main": "",
+    "scripts": {
+        "prepare": "husky install"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tbvgl/wappler-advanced-logger.git"
+    },
+    "keywords": [
+        "wappler-extension",
+        "server-connect",
+        "pino"
+    ],
+    "author": "Tobias Vogel",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/tbvgl/wappler-advanced-logger/issues"
+    },
+    "homepage": "https://github.com/tbvgl/wappler-advanced-logger#readme",
+    "devDependencies": {
+        "@commitlint/cli": "^17.6.3",
+        "@commitlint/config-conventional": "^17.6.3",
+        "husky": "^8.0.3"
+    }
+}
