@@ -22,7 +22,8 @@
     "devDependencies": {
         "@commitlint/cli": "^17.6.3",
         "@commitlint/config-conventional": "^17.6.3",
-        "husky": "^8.0.3"
+        "husky": "^8.0.3",
+        "pino-pretty": "^10.0.0"
     },
     "dependencies": {
         "pino": "^8.14.1",
