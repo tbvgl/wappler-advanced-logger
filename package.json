@@ -23,5 +23,9 @@
         "@commitlint/cli": "^17.6.3",
         "@commitlint/config-conventional": "^17.6.3",
         "husky": "^8.0.3"
+    },
+    "dependencies": {
+        "pino": "^8.14.1",
+        "pino-http": "^8.3.3"
     }
 }
