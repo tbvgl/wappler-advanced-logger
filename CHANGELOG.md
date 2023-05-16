@@ -1,3 +1,17 @@
+## [1.1.1](https://github.com/tbvgl/wappler-advanced-logger/compare/v1.1.0...v1.1.1) (2023-05-16)
+
+
+### Bug Fixes
+
+* automatic installation ([8ee2428](https://github.com/tbvgl/wappler-advanced-logger/commit/8ee2428304d4c26f2ab0f475c9e4fdbdf875ce15))
+
+## [1.1.1-release.1](https://github.com/tbvgl/wappler-advanced-logger/compare/v1.1.0...v1.1.1-release.1) (2023-05-16)
+
+
+### Bug Fixes
+
+* automatic installation ([8ee2428](https://github.com/tbvgl/wappler-advanced-logger/commit/8ee2428304d4c26f2ab0f475c9e4fdbdf875ce15))
+
 # [1.1.0](https://github.com/tbvgl/wappler-advanced-logger/compare/v1.0.1...v1.1.0) (2023-05-16)
 
 
