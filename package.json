@@ -3,7 +3,16 @@
     "version": "0.0.0-semantic-release",
     "description": "This extension for Wappler provides advanced logging functionality using the [Pino](https://github.com/pinojs/pino) library, [Logtail](https://logtail.com) for log aggregation, and [Sentry](https://sentry.io) for error tracking. It allows you to log messages with various log levels, supports multiple transport options such as console, file, and Logtail, and provides log redaction capabilities.",
     "main": "",
-    "scripts": {},
+    "scripts": {
+        "postinstall": "[ -d node_modules/wappler-advanced-logger ] && copy-files-from-to || echo 'wappler-advanced-logger not installed; skipping copy'"
+    },
+    "copyFiles": [{
+        "from": "node_modules/wappler-advanced-logger/server_connect/*/*",
+        "to": "extensions/server_connect/"
+    }],
+    "copyFilesSettings": {
+        "whenFileExists": "overwrite"
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/tbvgl/wappler-advanced-logger.git"
@@ -26,6 +35,7 @@
         "pino-pretty": "^10.0.0"
     },
     "dependencies": {
+        "copy-files-from-to": "^3.8.0",
         "pino": "^8.14.1",
         "pino-http": "^8.3.3"
     }
