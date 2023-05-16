@@ -1,3 +1,17 @@
+## [1.1.2](https://github.com/tbvgl/wappler-advanced-logger/compare/v1.1.1...v1.1.2) (2023-05-16)
+
+
+### Bug Fixes
+
+* automatic installation fails if nested extension ([ceae070](https://github.com/tbvgl/wappler-advanced-logger/commit/ceae0707c98974fbcce18f02a32441736d2ce56c))
+
+## [1.1.2-release.1](https://github.com/tbvgl/wappler-advanced-logger/compare/v1.1.1...v1.1.2-release.1) (2023-05-16)
+
+
+### Bug Fixes
+
+* automatic installation fails if nested extension ([ceae070](https://github.com/tbvgl/wappler-advanced-logger/commit/ceae0707c98974fbcce18f02a32441736d2ce56c))
+
 ## [1.1.1](https://github.com/tbvgl/wappler-advanced-logger/compare/v1.1.0...v1.1.1) (2023-05-16)
 
 
