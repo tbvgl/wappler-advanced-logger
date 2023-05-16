@@ -1,3 +1,17 @@
+## [1.0.1](https://github.com/tbvgl/wappler-advanced-logger/compare/v1.0.0...v1.0.1) (2023-05-16)
+
+
+### Bug Fixes
+
+* missing dependencies ([d3860c8](https://github.com/tbvgl/wappler-advanced-logger/commit/d3860c8994b9f371193fd15cc8e27c567c2dfa32))
+
+## [1.0.1-release.1](https://github.com/tbvgl/wappler-advanced-logger/compare/v1.0.0...v1.0.1-release.1) (2023-05-16)
+
+
+### Bug Fixes
+
+* missing dependencies ([d3860c8](https://github.com/tbvgl/wappler-advanced-logger/commit/d3860c8994b9f371193fd15cc8e27c567c2dfa32))
+
 # 1.0.0 (2023-05-16)
 
 
