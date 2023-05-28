@@ -10,10 +10,22 @@ exports.handler = function(app) {
             }
             return 'debug';
         },
+        serializers: {
+            req: function(req) {
+                return {
+                    method: req.method,
+                    url: req.url,
+                    headers: {...req.headers },
+                    remoteAddress: req.remoteAddress,
+                    remotePort: req.remotePort
+                };
+            },
+        }
     });
 
     app.use((req, res, next) => {
-        httpLogger(req, res);
+        const copiedReq = {...req, headers: {...req.headers } };
+        httpLogger(copiedReq, res);
         next();
     });
 };
