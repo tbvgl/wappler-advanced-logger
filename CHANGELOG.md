@@ -1,3 +1,17 @@
+## [1.1.3](https://github.com/tbvgl/wappler-advanced-logger/compare/v1.1.2...v1.1.3) (2023-05-28)
+
+
+### Bug Fixes
+
+* redacted headers are removed from request ([d65a783](https://github.com/tbvgl/wappler-advanced-logger/commit/d65a783158bcb42262422c67e5d0c8d05fb1e20b))
+
+## [1.1.3-release.1](https://github.com/tbvgl/wappler-advanced-logger/compare/v1.1.2...v1.1.3-release.1) (2023-05-28)
+
+
+### Bug Fixes
+
+* redacted headers are removed from request ([d65a783](https://github.com/tbvgl/wappler-advanced-logger/commit/d65a783158bcb42262422c67e5d0c8d05fb1e20b))
+
 ## [1.1.2](https://github.com/tbvgl/wappler-advanced-logger/compare/v1.1.1...v1.1.2) (2023-05-16)
 
 
