@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/tbvgl/wappler-advanced-logger/compare/v1.1.3...v1.1.4) (2023-09-19)
+
+
+### Bug Fixes
+
+* error logs are not sent to other destinations if sentry is enabled ([6dc52b6](https://github.com/tbvgl/wappler-advanced-logger/commit/6dc52b635cf6375f170d8ce26af65c3a4c734671))
+
 ## [1.1.3](https://github.com/tbvgl/wappler-advanced-logger/compare/v1.1.2...v1.1.3) (2023-05-28)
 
 
