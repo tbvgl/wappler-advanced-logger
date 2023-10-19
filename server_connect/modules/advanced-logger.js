@@ -46,7 +46,6 @@ if (logFilePath) {
 }
 
 const transport = pino.transport({ targets: transports });
-
 const logger = pino(
   {
     level: logLevel,
