@@ -1,3 +1,4 @@
+
 ## [1.1.4-release.2](https://github.com/tbvgl/wappler-advanced-logger/compare/v1.1.4-release.1...v1.1.4-release.2) (2023-10-19)
 
 
@@ -6,6 +7,9 @@
 * remove Sentry ([e7fcd13](https://github.com/tbvgl/wappler-advanced-logger/commit/e7fcd131226f8ea3df10bc7376f3095395b0a7e8))
 
 ## [1.1.4-release.1](https://github.com/tbvgl/wappler-advanced-logger/compare/v1.1.3...v1.1.4-release.1) (2023-09-19)
+=======
+## [1.1.4](https://github.com/tbvgl/wappler-advanced-logger/compare/v1.1.3...v1.1.4) (2023-09-19)
+
 
 
 ### Bug Fixes
