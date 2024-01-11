@@ -7,6 +7,8 @@
 
 ## [1.1.5-release.1](https://github.com/tbvgl/wappler-advanced-logger/compare/v1.1.4...v1.1.5-release.1) (2023-10-19)
 
+## [1.1.5](https://github.com/tbvgl/wappler-advanced-logger/compare/v1.1.4...v1.1.5) (2023-10-19)
+
 
 ### Bug Fixes
 
