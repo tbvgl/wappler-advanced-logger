@@ -20,6 +20,7 @@
             "name": "actionName",
             "optionName": "name",
             "title": "Name",
+            "baseName": "log",
             "type": "text",
             "required": true,
             "defaultValue": ""
@@ -52,7 +53,35 @@
             "required": true,
             "serverDataBindings": true,
             "help": "The log level"
-          }
+          },
+          {
+            "name": "bindings",
+            "optionName": "bindings",
+            "key": "var",
+            "keyValue": "value", 
+            "title": "Additional Data",
+            "type": "grid",
+            "defaultValue": {},
+            "serverDataBindings": true,
+            "columns": [
+              {
+                "field": "var",
+                "caption": "Variable",
+                "size": "30%",
+                "editable": {
+                  "type": "text"
+                }
+              },
+              {
+                "field": "value",
+                "caption": "Value",
+                "size": "70%",
+                "editable": {
+                  "type": "datapicker"
+                }
+              }
+            ]
+          },
         ]
       }
     ]

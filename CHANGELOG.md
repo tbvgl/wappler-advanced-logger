@@ -1,3 +1,12 @@
+# [1.2.0-release.1](https://github.com/tbvgl/wappler-advanced-logger/compare/v1.1.5-release.1...v1.2.0-release.1) (2024-01-11)
+
+
+### Features
+
+* allow for additional log data ([144971c](https://github.com/tbvgl/wappler-advanced-logger/commit/144971cdbbd94cedb9a7ce68e0293c5e174d3749))
+
+## [1.1.5-release.1](https://github.com/tbvgl/wappler-advanced-logger/compare/v1.1.4...v1.1.5-release.1) (2023-10-19)
+
 ## [1.1.5](https://github.com/tbvgl/wappler-advanced-logger/compare/v1.1.4...v1.1.5) (2023-10-19)
 
 
