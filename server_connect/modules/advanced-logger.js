@@ -15,6 +15,13 @@ const logDirectoryPath = process.env.LOG_FILE_PATH
   ? toSystemPath(process.env.LOG_FILE_PATH)
   : null;
 const minLength = process.env.WRITE_LOG_MIN_LENGTH || 4096;
+let Sentry;
+const sentryDsn = process.env.SENTRY_DSN;
+
+if (sentryDsn) {
+  Sentry = require("@sentry/node");
+  Sentry.init({ dsn: sentryDsn });
+}
 
 const transports = [];
 
@@ -46,6 +53,7 @@ if (logFilePath) {
 }
 
 const transport = pino.transport({ targets: transports });
+
 const logger = pino(
   {
     level: logLevel,
@@ -69,6 +77,7 @@ function getCurrentDate() {
 function parse(options) {
   options = options || {};
   let details = null;
+  let bindings = options.bindings || {};
 
   if (options.details) {
     if (typeof options.details === "string") {
@@ -88,6 +97,7 @@ function parse(options) {
     message: message,
     log_level: options.log_level || "info",
     details,
+    bindings
   };
 }
 async function cleanOldLogs(options) {
@@ -138,8 +148,9 @@ async function cleanOldLogs(options) {
 async function logMessage(options) {
   options =
     typeof this.parse === "function" ? this.parse(options) : parse(options);
-  const { message, log_level, details } = options || {};
-
+    const { message, log_level, details, bindings } = options || {};
+    
+  
   if (!message) {
     return;
   }
@@ -148,20 +159,31 @@ async function logMessage(options) {
     message,
     log_level,
     details,
+    ...bindings
   };
 
   if (!prettyPrint && logEnvironment) {
     logObject.log_environment = logEnvironment;
   }
 
+  // Log to Sentry regardless of log_level
+  if (sentryDsn) {
+    Sentry.captureMessage(message, {
+      level: log_level,
+      extra: logObject,
+      tags: { details: JSON.stringify(details) },
+    });
+  }
+
   // Log to other destinations for all log levels
   logger[log_level](logObject);
+
 }
 
 function logMessageSync(options) {
   options =
     typeof this.parse === "function" ? this.parse(options) : parse(options);
-  const { message, log_level, details } = options || {};
+  const { message, log_level, details} = options || {};
 
   if (!message) {
     return;
@@ -171,12 +193,21 @@ function logMessageSync(options) {
     message,
     log_level,
     details,
+    ...bindings
   };
 
   if (!prettyPrint && logEnvironment) {
     logObject.log_environment = logEnvironment;
   }
 
+  // Log to Sentry regardless of log_level
+  if (sentryDsn) {
+    Sentry.captureMessage(message, {
+      level: log_level,
+      extra: logObject,
+      tags: { details: JSON.stringify(details) },
+    });
+  }
 
   // Log to other destinations for all log levels
   logger[log_level](logObject);
