@@ -1,3 +1,10 @@
+# [1.3.0-release.1](https://github.com/tbvgl/wappler-advanced-logger/compare/v1.2.0...v1.3.0-release.1) (2024-06-19)
+
+
+### Features
+
+* mem usage optimized ([3501436](https://github.com/tbvgl/wappler-advanced-logger/commit/35014364fedf7a446c6119e7423aa31f9e8a38bd))
+
 ### Features
 
 
