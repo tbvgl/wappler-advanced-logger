@@ -4,6 +4,7 @@ const fs = require("fs");
 const path = require("path");
 const { redactionKeys } = require("./redaction-keys");
 const { toSystemPath } = require("../../../lib/core/path");
+
 const prettyPrint = process.env.PRETTY_LOG === "enabled";
 const logLevel = process.env.LOG_LEVEL || "debug";
 const logEnvironment = process.env.LOG_ENVIRONMENT;
@@ -15,6 +16,7 @@ const logDirectoryPath = process.env.LOG_FILE_PATH
   ? toSystemPath(process.env.LOG_FILE_PATH)
   : null;
 const minLength = process.env.WRITE_LOG_MIN_LENGTH || 4096;
+
 let Sentry;
 const sentryDsn = process.env.SENTRY_DSN;
 
@@ -100,8 +102,9 @@ function parse(options) {
     bindings
   };
 }
+
 async function cleanOldLogs(options) {
-  options = this.parse(options);
+  options = parse(options);
   const logRetainDays = options.retainDays || 7;
   if (!logDirectoryPath || isNaN(logRetainDays)) {
     console.log("logDirectoryPath:", logDirectoryPath);
@@ -146,11 +149,9 @@ async function cleanOldLogs(options) {
 }
 
 async function logMessage(options) {
-  options =
-    typeof this.parse === "function" ? this.parse(options) : parse(options);
-    const { message, log_level, details, bindings } = options || {};
-    
-  
+  options = typeof this.parse === "function" ? this.parse(options) : parse(options);
+  const { message, log_level, details, bindings } = options || {};
+
   if (!message) {
     return;
   }
@@ -177,13 +178,11 @@ async function logMessage(options) {
 
   // Log to other destinations for all log levels
   logger[log_level](logObject);
-
 }
 
 function logMessageSync(options) {
-  options =
-    typeof this.parse === "function" ? this.parse(options) : parse(options);
-  const { message, log_level, details} = options || {};
+  options = typeof this.parse === "function" ? this.parse(options) : parse(options);
+  const { message, log_level, details, bindings } = options || {};
 
   if (!message) {
     return;
@@ -218,4 +217,5 @@ module.exports = {
   logMessage,
   logMessageSync,
   cleanOldLogs,
+  parse
 };
